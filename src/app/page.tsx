@@ -1,6 +1,6 @@
 "use client";
 
-import Head from "next/head";
+g
 
 export default function Home() {
   return (
