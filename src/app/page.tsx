@@ -1,30 +1,23 @@
 "use client";
 
+import Image from "next/image";
+import doctor from "../../public/images/img/doctor.png";
+import { PiTree, PiDna } from "react-icons/pi";
+import { MdOutlineBiotech } from "react-icons/md";
+import Link from "next/link";
+import HeroSection from "./components/hero/Hero";
+import Navbar from "./components/navbar/Navbar";
+
+
+
 export default function Home() {
   return (
-    <main className="font-sans text-gray-800 bg-white">
+    <main className="font-sans text-gray-800 bg-white p-4 space-y-4">
+      {/* Navbar Section */}
+      <Navbar/>
+
       {/* Hero Section */}
-      <section
-        className="bg-gradient-to-r from-green-600 to-teal-600 text-white py-20 px-6 text-center"
-        aria-label="Hero Section"
-      >
-        {" "}
-        <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
-          World-Class Pharma Research & Development from the Heart of Varanasi
-        </p>
-        <h1 className="text-4xl md:text-5xl font-extrabold max-w-4xl mx-auto leading-tight">
-          Welcome to Keon Pharm
-        </h1>
-        <p className="mt-1 text-lg font-semibold md:text-xl max-w-3xl mx-auto">
-          Where Ancient Wisdom Meets Modern Science
-        </p>
-        <a
-          href="#contact"
-          className="mt-8 inline-block bg-white text-green-700 font-semibold py-3 px-6 rounded-md shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
-        >
-          Contact Us Today
-        </a>
-      </section>
+      <HeroSection/>
 
       {/* Contact info bar */}
       <section className="bg-gray-100 py-4 text-center text-sm md:text-base text-gray-700">
@@ -101,7 +94,7 @@ export default function Home() {
             <h3 className="text-2xl font-bold text-center text-green-900 mb-4">
               Our Mission
             </h3>
-            <ul className="list-disc flex list-inside space-y-2 text-gray-700 leading-relaxed gap-10">
+            <ul className="list-disc md:flex list-inside space-y-2 text-gray-700 leading-relaxed gap-10">
               <li>
                 <strong>Innovate</strong> <br />
                 Advance research in Ayurvedic and modern medicine for today’s
@@ -457,5 +450,3 @@ export default function Home() {
     </main>
   );
 }
-
-
