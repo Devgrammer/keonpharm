@@ -1,12 +1,18 @@
 "use client";
 
-import Image from "next/image";
-import doctor from "../../public/images/img/doctor.png";
-import { PiTree, PiDna } from "react-icons/pi";
-import { MdOutlineBiotech } from "react-icons/md";
-import Link from "next/link";
 import HeroSection from "./components/hero/Hero";
+import MissionCard from "./components/missionCard/MissionCard";
 import Navbar from "./components/navbar/Navbar";
+import SectionHeading from "./components/sectionHeading/SectionHeading";
+import SectionWrapper from "./components/sectionWrapper/SectionWrapper";
+import { IoBulbOutline, IoBookOutline } from "react-icons/io5";
+import { FaRegHandBackFist } from "react-icons/fa6";
+import { PiPlant } from "react-icons/pi";
+
+
+
+
+
 
 
 
@@ -14,13 +20,13 @@ export default function Home() {
   return (
     <main className="font-sans text-gray-800 bg-white p-4 space-y-4">
       {/* Navbar Section */}
-      <Navbar/>
+      <Navbar />
 
       {/* Hero Section */}
-      <HeroSection/>
+      <HeroSection />
 
       {/* Contact info bar */}
-      <section className="bg-gray-100 py-4 text-center text-sm md:text-base text-gray-700">
+      {/* <section className="bg-gray-100 py-4 text-center text-sm md:text-base text-gray-700">
         <address className="not-italic">
           <p>
             SA5/129-B, Ramrepur Pahariya, Pahariya Mandi, Varanasi, Uttar
@@ -40,20 +46,12 @@ export default function Home() {
             </a>
           </p>
         </address>
-      </section>
+      </section> */}
 
       {/* Who We Are */}
-      <section
-        className="max-w-6xl mx-auto px-6 py-16"
-        aria-labelledby="who-we-are-title"
-      >
-        <h2
-          id="who-we-are-title"
-          className="text-3xl font-bold text-green-800 mb-6 text-center"
-        >
-          Who We Are
-        </h2>
-        <p className="max-w-3xl mx-auto leading-relaxed text-center text-gray-700">
+      <SectionWrapper>
+        <SectionHeading heading={{ primary: "Who We", secondary: "Are?" }} />
+        <p className="max-w-8xl text-md mx-auto leading-relaxed text-justify text-gray-700">
           Keon Pharm Private Limited is a trailblazer at the crossroads of
           tradition and innovation. From Varanasi — India’s spiritual capital —
           we are redefining healthcare by blending advanced pharmaceutical
@@ -62,61 +60,62 @@ export default function Home() {
           evidence-based solutions that honor both ancient knowledge and modern
           science.
         </p>
-      </section>
+      </SectionWrapper>
 
       {/* Vision*/}
-      <section
-        className="bg-green-50 py-16 px-6"
-        aria-labelledby="vision-mission-title"
-      >
-        <div className="max-w-6xl mx-auto grid ">
-          <div>
-            <h3
-              id="vision-mission-title"
-              className="text-2xl text-center font-bold text-green-900 mb-4"
-            >
-              Our Vision
-            </h3>
-            <p className="text-gray-700  text-center leading-relaxed">
-              To lead globally in integrative healthcare — where Ayurveda’s
-              timeless principles meet cutting-edge pharmaceutical breakthroughs
-              — delivering safe, effective, and sustainable health solutions for
-              all.
-            </p>
-          </div>
-        </div>
-      </section>
+      <SectionWrapper>
+        <SectionHeading heading={{ primary: "Our", secondary: "Vision" }} />
+
+        <p className="text-gray-700 text-md text-justify leading-relaxed">
+          To lead globally in integrative healthcare — where Ayurveda’s timeless
+          principles meet cutting-edge pharmaceutical breakthroughs — delivering
+          safe, effective, and sustainable health solutions for all.
+        </p>
+      </SectionWrapper>
 
       {/* Mission */}
-      <section className=" py-16 px-6" aria-labelledby="vision-mission-title">
-        <div className="max-w-6xl mx-auto">
+      <SectionWrapper>
+        <div className=" mx-auto">
           <div>
-            <h3 className="text-2xl font-bold text-center text-green-900 mb-4">
-              Our Mission
-            </h3>
-            <ul className="list-disc md:flex list-inside space-y-2 text-gray-700 leading-relaxed gap-10">
+        <SectionHeading heading={{ primary: "Our", secondary: "Mission" }} />
+            
+            <ul className="list-none md:flex justify-between list-inside space-y-2 text-gray-700 leading-relaxed space-y-12">
               <li>
-                <strong>Innovate</strong> <br />
-                Advance research in Ayurvedic and modern medicine for today’s
-                health needs.
+                <MissionCard
+                  icon={() => <IoBulbOutline />}
+                  heading={"Innovate"}
+                  content={`Advance research in Ayurvedic and modern medicine for today’s health
+        needs.`}
+                />
               </li>
               <li>
-                <strong>Empower</strong>
-                <br /> Make high-quality, proven healthcare accessible
-                worldwide.
+                <MissionCard
+                  icon={() => <FaRegHandBackFist />}
+                  heading={"Empower"}
+                  content={`Make high-quality, proven healthcare accessible
+                worldwide.`}
+                />
               </li>
               <li>
-                <strong>Sustain</strong> <br /> Uphold eco-friendly practices
-                and ethical sourcing of all ingredients.
+                <MissionCard
+                  icon={() => <PiPlant />}
+                  heading={"Sustain"}
+                  content={`Uphold eco-friendly practices
+                and ethical sourcing of all ingredients.`}
+                />
               </li>
               <li>
-                <strong>Educate</strong> <br /> Promote health awareness and
-                training for professionals and communities.
+                <MissionCard
+                  icon={() => <IoBookOutline />}
+                  heading={"Educate"}
+                  content={`Promote health awareness and
+                training for professionals and communities.`}
+                />
               </li>
             </ul>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* What Makes Keon Pharm Unique */}
       <section
