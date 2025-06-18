@@ -1,0 +1,47 @@
+
+{
+  "features": [
+    {
+      "id": 1,
+      "icon": "TbSettingsSpark",
+      "heading": "Integrative R&D",
+      "content": "We unite Ayurveda and modern pharma, creating products validated by rigorous research and clinical trials."
+    },
+    {
+      "id": 2,
+      "icon": "BsPatchCheck",
+      "heading": "State-of-the-Art Facilities",
+      "content": "Equipped with the latest technology for quality, safety, and innovation."
+    },
+    {
+      "id": 3,
+      "icon": "LiaHandshakeSolid",
+      "heading": "Global Collaborations",
+      "content": "Partnering with leading research institutions and pharma companies worldwide."
+    },
+    {
+      "id": 4,
+      "icon": "PiPottedPlant",
+      "heading": "Sustainability at Core",
+      "content": "Eco-friendly manufacturing and preservation of rare medicinal plants."
+    },
+    {
+      "id": 5,
+      "icon": "PiHandHeartBold",
+      "heading": "Holistic Wellness",
+      "content": "Our range spans Ayurvedic medicines, herbal supplements, modern pharmaceuticals, and natural skincare."
+    },
+    {
+      "id": 6,
+      "icon": "TbWorldCheck",
+      "heading": "Quality Without Compromise",
+      "content": "Strict quality control and compliance with international standards."
+    },
+    {
+      "id": 7,
+      "icon": "LiaBalanceScaleSolid",
+      "heading": "Social Responsibility",
+      "content": "Investing in public health, rural care, and education for societal benefit."
+    }
+  ]
+}
