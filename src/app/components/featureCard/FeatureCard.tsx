@@ -12,7 +12,7 @@ interface FeatureProp {
   content: string;
 }
 
-const IconRenderer = (ch) => {
+const IconRenderer = (ch:string) => {
   switch (ch) {
     case "TbSettingsSpark":
       return <TbSettingsSpark />;
