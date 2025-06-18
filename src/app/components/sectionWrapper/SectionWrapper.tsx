@@ -6,7 +6,7 @@ interface SectionProps {
 const SectionWrapper = ({ children }: SectionProps) => {
   return (
     <section
-      className="max-w-8xl px-16 mx-auto  py-16"
+      className="max-w-8xl px-4 md:px-16 mx-auto  py-16"
       aria-labelledby="who-we-are-title"
     >
       {children}

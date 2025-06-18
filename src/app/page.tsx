@@ -8,17 +8,12 @@ import SectionWrapper from "./components/sectionWrapper/SectionWrapper";
 import { IoBulbOutline, IoBookOutline } from "react-icons/io5";
 import { FaRegHandBackFist } from "react-icons/fa6";
 import { PiPlant } from "react-icons/pi";
-
-
-
-
-
-
-
+import FeatureCard from "./components/featureCard/FeatureCard";
+import featureData from "./data/feature.json";
 
 export default function Home() {
   return (
-    <main className="font-sans text-gray-800 bg-white p-4 space-y-4">
+    <main className="font-sans text-gray-800 bg-white p-4 space-y-2">
       {/* Navbar Section */}
       <Navbar />
 
@@ -77,8 +72,10 @@ export default function Home() {
       <SectionWrapper>
         <div className=" mx-auto">
           <div>
-        <SectionHeading heading={{ primary: "Our", secondary: "Mission" }} />
-            
+            <SectionHeading
+              heading={{ primary: "Our", secondary: "Mission" }}
+            />
+
             <ul className="list-none md:flex justify-between list-inside space-y-2 text-gray-700 leading-relaxed space-y-12">
               <li>
                 <MissionCard
@@ -118,46 +115,25 @@ export default function Home() {
       </SectionWrapper>
 
       {/* What Makes Keon Pharm Unique */}
-      <section
-        className="bg-green-50  px-6 py-16"
-        aria-labelledby="unique-title"
-      >
-        <h2
-          id="unique-title"
-          className="text-3xl font-bold text-green-800 mb-10 text-center"
-        >
-          What Makes Keon Pharm Unique?
-        </h2>
-        <ul className="grid md:grid-cols-2 gap-8 text-gray-700 max-w-4xl mx-auto leading-relaxed">
-          {[
-            "Integrative R&D: We unite Ayurveda and modern pharma, creating products validated by rigorous research and clinical trials.",
-            "State-of-the-Art Facilities: Equipped with the latest technology for quality, safety, and innovation.",
-            "Global Collaborations: Partnering with leading research institutions and pharma companies worldwide.",
-            "Sustainability at Core: Eco-friendly manufacturing and preservation of rare medicinal plants.",
-            "Holistic Wellness: Our range spans Ayurvedic medicines, herbal supplements, modern pharmaceuticals, and natural skincare.",
-            "Quality Without Compromise: Strict quality control and compliance with international standards.",
-            "Social Responsibility: Investing in public health, rural care, and education for societal benefit.",
-          ].map((point, i) => (
-            <li key={i} className="flex items-start space-x-3">
-              <svg
-                className="flex-shrink-0 w-6 h-6 text-green-600 mt-1"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span>{point}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
+      <SectionWrapper>
+        <SectionHeading
+          heading={{ primary: "What Makes Keon Pharm", secondary: "Unique?" }}
+        />
+
+        <div className="feature-card-container grid grid-cols-1 md:grid-cols-2 gap-4">
+          {featureData.features.map((feature, idx) => {
+            return (
+              <FeatureCard
+                key={idx}
+                id={feature.id}
+                icon={feature.icon}
+                heading={feature.heading}
+                content={feature.content}
+              />
+            );
+          })}
+        </div>
+      </SectionWrapper>
 
       {/* Main Areas of Focus */}
       <section
