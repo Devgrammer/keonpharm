@@ -14,14 +14,16 @@ import FocusCard from "./components/focusCard/FocusCard";
 import { useState } from "react";
 
 interface FocusState {
-  [key: string]: boolean;
+  ayu: boolean;
+  mod: boolean;
+  nat: boolean;
 }
 
 export default function Home() {
   const [isFocused, setIsFocused] = useState<FocusState>({
-    ayu: true,
-    mod: false,
-    nat: false,
+    'ayu': true,
+    'mod': false,
+    'nat': false,
   });
   return (
     <main className="font-sans text-gray-800 bg-white p-4 space-y-2">
