@@ -11,7 +11,7 @@ interface focusProp {
   desc: string;
   img: string;
   isFocused: FocusState;
-  id: string;
+  id: keyof FocusState;
   setIsFocused: React.Dispatch<React.SetStateAction<FocusState>>;
 }
 
@@ -31,7 +31,7 @@ const FocusCard = ({
       style={{
         backgroundImage: `url(${img})`,
       }}
-      onClick={() => setIsFocused({ [id]: true })}
+      onClick={() => setIsFocused(prev=>({...prev, [id]: true }))}
     >
       <div className="w-full h-full z-1 rounded-xl bg-gradient-to-b  from-black to-black to-40% opacity-40 absolute"></div>
       <div
