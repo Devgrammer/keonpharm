@@ -35,7 +35,7 @@ const IconRenderer = (ch:string) => {
 const FeatureCard = ({ id, icon, heading, content }: FeatureProp) => {
   return (
     <div
-      className={`feature-card-container flex items-center gap-4 h-24 min-w-64 max-w-3xl rounded-md p-4 ${
+      className={`feature-card-container flex items-center gap-4 h-24 min-full max-w-3xl rounded-md p-4 ${
         id ? "bg-teal text-white" : "text-black"
       }`}
     >

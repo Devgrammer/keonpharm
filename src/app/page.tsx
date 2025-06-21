@@ -10,8 +10,19 @@ import { FaRegHandBackFist } from "react-icons/fa6";
 import { PiPlant } from "react-icons/pi";
 import FeatureCard from "./components/featureCard/FeatureCard";
 import featureData from "./data/feature.json";
+import FocusCard from "./components/focusCard/FocusCard";
+import { useState } from "react";
+
+interface FocusState {
+  [key: string]: boolean;
+}
 
 export default function Home() {
+  const [isFocused, setIsFocused] = useState<FocusState>({
+    ayu: true,
+    mod: false,
+    nat: false,
+  });
   return (
     <main className="font-sans text-gray-800 bg-white p-4 space-y-2">
       {/* Navbar Section */}
@@ -61,7 +72,7 @@ export default function Home() {
       <SectionWrapper>
         <SectionHeading heading={{ primary: "Our", secondary: "Vision" }} />
 
-        <p className="text-gray-700 text-md text-justify leading-relaxed">
+        <p className="text-gray-700 text-md text-justify md:text-center leading-relaxed">
           To lead globally in integrative healthcare — where Ayurveda’s timeless
           principles meet cutting-edge pharmaceutical breakthroughs — delivering
           safe, effective, and sustainable health solutions for all.
@@ -76,40 +87,35 @@ export default function Home() {
               heading={{ primary: "Our", secondary: "Mission" }}
             />
 
-            <ul className="list-none md:flex justify-between list-inside space-y-2 text-gray-700 leading-relaxed space-y-12">
-              <li>
-                <MissionCard
-                  icon={() => <IoBulbOutline />}
-                  heading={"Innovate"}
-                  content={`Advance research in Ayurvedic and modern medicine for today’s health
+            <div className=" w-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 list-inside gap-4 md:gap-0 text-gray-700 leading-relaxed mx-auto">
+              <MissionCard
+                icon={() => <IoBulbOutline />}
+                heading={"Innovate"}
+                content={`Advance research in Ayurvedic and modern medicine for today’s health
         needs.`}
-                />
-              </li>
-              <li>
-                <MissionCard
-                  icon={() => <FaRegHandBackFist />}
-                  heading={"Empower"}
-                  content={`Make high-quality, proven healthcare accessible
+              />
+
+              <MissionCard
+                icon={() => <FaRegHandBackFist />}
+                heading={"Empower"}
+                content={`Make high-quality, proven healthcare accessible
                 worldwide.`}
-                />
-              </li>
-              <li>
-                <MissionCard
-                  icon={() => <PiPlant />}
-                  heading={"Sustain"}
-                  content={`Uphold eco-friendly practices
+              />
+
+              <MissionCard
+                icon={() => <PiPlant />}
+                heading={"Sustain"}
+                content={`Uphold eco-friendly practices
                 and ethical sourcing of all ingredients.`}
-                />
-              </li>
-              <li>
-                <MissionCard
-                  icon={() => <IoBookOutline />}
-                  heading={"Educate"}
-                  content={`Promote health awareness and
+              />
+
+              <MissionCard
+                icon={() => <IoBookOutline />}
+                heading={"Educate"}
+                content={`Promote health awareness and
                 training for professionals and communities.`}
-                />
-              </li>
-            </ul>
+              />
+            </div>
           </div>
         </div>
       </SectionWrapper>
@@ -120,7 +126,7 @@ export default function Home() {
           heading={{ primary: "What Makes Keon Pharm", secondary: "Unique?" }}
         />
 
-        <div className="feature-card-container grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="feature-card-container grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 w-fit mx-auto">
           {featureData.features.map((feature, idx) => {
             return (
               <FeatureCard
@@ -136,89 +142,43 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Main Areas of Focus */}
-      <section
-        className="max-w-6xl mx-auto py-16 px-6"
-        aria-labelledby="focus-title"
-      >
-        <h2
-          id="focus-title"
-          className="text-3xl font-bold text-green-900 mb-10 text-center"
-        >
-          Our Main Areas of Focus
-        </h2>
-        <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-10 text-gray-700 leading-relaxed">
-          {[
-            {
-              title: "Ayurvedic & Herbal Medicines",
-              desc: "Authentic formulations and supplements rooted in tradition, validated by modern science.",
-              icon: (
-                <svg
-                  className="w-10 h-10 text-green-600 mb-3"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M4 15h16M4 19h16M4 7h16M4 11h16"
-                  />
-                </svg>
-              ),
-            },
-            {
-              title: "Modern Pharmaceuticals",
-              desc: "Innovative drug discovery, clinical research, vaccines, and advanced therapeutics.",
-              icon: (
-                <svg
-                  className="w-10 h-10 text-green-600 mb-3"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 12h6M9 16h6M10 20h4M3 6h18"
-                  />
-                </svg>
-              ),
-            },
-            {
-              title: "Natural Skincare & Wellness",
-              desc: "Herbal skincare and personal care products for holistic well-being.",
-              icon: (
-                <svg
-                  className="w-10 h-10 text-green-600 mb-3"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M12 6v6l4 2" />
-                </svg>
-              ),
-            },
-          ].map(({ title, desc, icon }, i) => (
-            <article
-              key={i}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-              tabIndex={0}
-              aria-label={title}
-            >
-              {icon}
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p>{desc}</p>
-            </article>
-          ))}
+      <SectionWrapper>
+        <SectionHeading
+          heading={{ primary: "Our Main Area of", secondary: "Focus?" }}
+        />
+        <div className="focus-card-container  mt-auto space-y-8 space-x-8 md:flex justify-between">
+          <FocusCard
+            heading={"Ayurvedic & Herbal Medicines"}
+            desc={
+              "Authentic formulations and supplements rooted in tradition, validated by modern science."
+            }
+            img={"./images/img/ayurveda.webp"}
+            isFocused={isFocused}
+            id={"ayu"}
+            setIsFocused={setIsFocused}
+          />
+          <FocusCard
+            heading={"Modern Pharmaceuticals"}
+            desc={
+              "Innovative drug discovery, clinical research, vaccines, and advanced therapeutics."
+            }
+            img={"./images/img/modern.avif"}
+            isFocused={isFocused}
+            id={"mod"}
+            setIsFocused={setIsFocused}
+          />
+          <FocusCard
+            heading={"Natural Skincare & Wellness"}
+            desc={
+              "Herbal skincare and personal care products for holistic well-being."
+            }
+            img={"./images/img/natural.png"}
+            isFocused={isFocused}
+            id={"nat"}
+            setIsFocused={setIsFocused}
+          />
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Promise & Invitation */}
       <section
