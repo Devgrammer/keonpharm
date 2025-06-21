@@ -31,7 +31,7 @@ const FocusCard = ({
       style={{
         backgroundImage: `url(${img})`,
       }}
-      onClick={() => setIsFocused(prev=>({...prev, [id]: true }))}
+      onClick={() => setIsFocused({...isFocused,[id]: true })}
     >
       <div className="w-full h-full z-1 rounded-xl bg-gradient-to-b  from-black to-black to-40% opacity-40 absolute"></div>
       <div
