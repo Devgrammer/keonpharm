@@ -12,6 +12,7 @@ import FeatureCard from "./components/featureCard/FeatureCard";
 import featureData from "./data/feature.json";
 import FocusCard from "./components/focusCard/FocusCard";
 import { useState } from "react";
+import ExpertCard from "./components/expertCard/ExpertCard";
 
 interface FocusState {
   ayu: boolean;
@@ -21,9 +22,9 @@ interface FocusState {
 
 export default function Home() {
   const [isFocused, setIsFocused] = useState<FocusState>({
-    'ayu': true,
-    'mod': false,
-    'nat': false,
+    ayu: true,
+    mod: false,
+    nat: false,
   });
   return (
     <main className="font-sans text-gray-800 bg-white p-4 space-y-2">
@@ -178,6 +179,29 @@ export default function Home() {
             isFocused={isFocused}
             id={"nat"}
             setIsFocused={setIsFocused}
+          />
+        </div>
+      </SectionWrapper>
+
+      {/* Our Expert */}
+      <SectionWrapper>
+        <SectionHeading heading={{ primary: "Our", secondary: "Experts" }} />
+        <div className="expert-car-container md:flex gap-4 mx-auto">
+          <ExpertCard
+            heading="Dr. Denis V. Mizgirev (MS)"
+            des="Professor, Department of Surgery, Northern State Medical University, Russian Federation"
+            img="/images/img/Denis.png"
+          />
+          <ExpertCard
+            heading="Ravindra Kharwar"
+            des="Professor in Botany, Institute of Science, BHU, Varanasi
+Ex-President of Mycology Society of India"
+            img="/images/img/Ravindra.png"
+          />
+          <ExpertCard
+            heading="Prof. Andrei Mariandyshev "
+            des="TB expert & HOD, Northern State Medical University, Leading major tuberculosis initiatives across Northwest Russia and Internationally"
+            img="/images/img/Andrei.png"
           />
         </div>
       </SectionWrapper>
