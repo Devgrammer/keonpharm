@@ -23,6 +23,18 @@ const FocusCard = ({
   isFocused,
   setIsFocused,
 }: focusProp) => {
+  const handleFocus = () => {
+    setIsFocused(
+      Object.keys(isFocused).reduce(
+        (acc, key) => ({
+          ...acc,
+          [key]: key === id,
+        }),
+        {} as FocusState
+      )
+    );
+  };
+
   return (
     <div
       className={` flex w-full h-96 rounded-xl bg-cover bg-center transition-all duration-600 ease-in-out relative  ${
@@ -31,7 +43,7 @@ const FocusCard = ({
       style={{
         backgroundImage: `url(${img})`,
       }}
-      onClick={() => setIsFocused({...isFocused,[id]: true })}
+      onClick={() => handleFocus()}
     >
       <div className="w-full h-full z-1 rounded-xl bg-gradient-to-b  from-black to-black to-40% opacity-40 absolute"></div>
       <div
