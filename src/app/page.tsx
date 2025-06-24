@@ -9,10 +9,12 @@ import { IoBulbOutline, IoBookOutline } from "react-icons/io5";
 import { FaRegHandBackFist } from "react-icons/fa6";
 import { PiPlant } from "react-icons/pi";
 import FeatureCard from "./components/featureCard/FeatureCard";
-import featureData from "./data/feature.json";
+import FeatureData from "./data/feature.json";
+import ChooseData from "./data/choose.json";
 import FocusCard from "./components/focusCard/FocusCard";
 import { useState } from "react";
 import ExpertCard from "./components/expertCard/ExpertCard";
+import ChooseCard from "./components/chooseCard/ChooseCard";
 
 interface FocusState {
   ayu: boolean;
@@ -59,7 +61,10 @@ export default function Home() {
 
       {/* Who We Are */}
       <SectionWrapper>
-        <SectionHeading heading={{ primary: "Who We", secondary: "Are?" }} />
+        <SectionHeading
+          heading={{ primary: "Who We", secondary: "Are?" }}
+          align="center"
+        />
         <p className="max-w-8xl text-md mx-auto leading-relaxed text-justify text-gray-700">
           Keon Pharm Private Limited is a trailblazer at the crossroads of
           tradition and innovation. From Varanasi — India’s spiritual capital —
@@ -73,7 +78,10 @@ export default function Home() {
 
       {/* Vision*/}
       <SectionWrapper>
-        <SectionHeading heading={{ primary: "Our", secondary: "Vision" }} />
+        <SectionHeading
+          heading={{ primary: "Our", secondary: "Vision" }}
+          align="center"
+        />
 
         <p className="text-gray-700 text-md text-justify md:text-center leading-relaxed">
           To lead globally in integrative healthcare — where Ayurveda’s timeless
@@ -88,6 +96,7 @@ export default function Home() {
           <div>
             <SectionHeading
               heading={{ primary: "Our", secondary: "Mission" }}
+              align="center"
             />
 
             <div className=" w-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 list-inside gap-4 md:gap-0 text-gray-700 leading-relaxed mx-auto">
@@ -127,10 +136,11 @@ export default function Home() {
       <SectionWrapper>
         <SectionHeading
           heading={{ primary: "What Makes Keon Pharm", secondary: "Unique?" }}
+          align="center"
         />
 
         <div className="feature-card-container grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-4 w-fit mx-auto">
-          {featureData.features.map((feature, idx) => {
+          {FeatureData.features.map((feature, idx) => {
             return (
               <FeatureCard
                 key={idx}
@@ -148,6 +158,7 @@ export default function Home() {
       <SectionWrapper>
         <SectionHeading
           heading={{ primary: "Our Main Area of", secondary: "Focus?" }}
+          align="center"
         />
         <div className="focus-card-container  mt-auto space-y-8 space-x-8 md:flex justify-between">
           <FocusCard
@@ -185,7 +196,10 @@ export default function Home() {
 
       {/* Our Expert */}
       <SectionWrapper>
-        <SectionHeading heading={{ primary: "Our", secondary: "Experts" }} />
+        <SectionHeading
+          heading={{ primary: "Our", secondary: "Experts" }}
+          align="center"
+        />
         <div className="expert-car-container md:flex gap-4 mx-auto">
           <ExpertCard
             heading="Dr. D.V. Mizgirev"
@@ -210,6 +224,7 @@ Ex-President of Mycology Society of India"
       <SectionWrapper>
         <SectionHeading
           heading={{ primary: "Our Promise", secondary: "to You" }}
+          align="center"
         />
         <div className="promise-content text-justify md:text-center mb-8">
           At Keon Pharm, we don’t just make medicines—we craft trust, wellness,
@@ -228,50 +243,28 @@ Ex-President of Mycology Society of India"
       </SectionWrapper>
 
       {/* Why Choose Us */}
-      <section
-        className="bg-green-50 px-6 py-16"
-        aria-labelledby="choose-us-title"
-      >
-        <h2
-          id="choose-us-title"
-          className="text-3xl font-bold text-green-800 mb-10 text-center"
-        >
-          Why Choose Keon Pharm?
-        </h2>
-        <ul className="grid md:grid-cols-3 gap-8 text-gray-700 max-w-5xl mx-auto leading-relaxed">
-          {[
-            "Decades of Expertise in Ayurveda and Pharma",
-            "Unmatched Quality & Safety Standards",
-            "Innovative Research and Development",
-            "Strong Ethical and Social Responsibility",
-            "Committed to Sustainability and Environment",
-            "Passionate Team Dedicated to Your Health",
-          ].map((reason, i) => (
-            <li
-              key={i}
-              className="flex items-start space-x-3"
-              tabIndex={0}
-              aria-label={reason}
-            >
-              <svg
-                className="flex-shrink-0 w-6 h-6 text-green-600 mt-1"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 13l4 4L19 7"
+
+      <SectionWrapper>
+        <div className=" md:flex mx-auto">
+          <SectionHeading
+            heading={{ primary: "Why Choose", secondary: "Keon Pharm?" }}
+            align="left"
+          />
+
+          <div className="feature-card-container w-full md:w-1/2 grid grid-cols-1  gap-4  justify-end">
+            {ChooseData.choose.map((choose, idx) => {
+              return (
+                <ChooseCard
+                  key={idx}
+                  id={choose.id}
+                  icon={choose.icon}
+                  heading={choose.heading}
                 />
-              </svg>
-              <span>{reason}</span>
-            </li>
-          ))}
-        </ul>
-      </section>
+              );
+            })}
+          </div>
+        </div>
+      </SectionWrapper>
 
       {/* Contact Section */}
       <section
