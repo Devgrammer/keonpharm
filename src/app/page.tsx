@@ -188,105 +188,45 @@ export default function Home() {
         <SectionHeading heading={{ primary: "Our", secondary: "Experts" }} />
         <div className="expert-car-container md:flex gap-4 mx-auto">
           <ExpertCard
-            heading="Dr. Denis V. Mizgirev (MS)"
+            heading="Dr. D.V. Mizgirev"
             des="Professor, Department of Surgery, Northern State Medical University, Russian Federation"
             img="/images/img/Denis.png"
           />
           <ExpertCard
-            heading="Ravindra Kharwar"
+            heading="Dr. Ravindra Kharwar"
             des="Professor in Botany, Institute of Science, BHU, Varanasi
 Ex-President of Mycology Society of India"
             img="/images/img/Ravindra.png"
           />
           <ExpertCard
-            heading="Prof. Andrei Mariandyshev "
-            des="TB expert & HOD, Northern State Medical University, Leading major tuberculosis initiatives across Northwest Russia and Internationally"
+            heading="Dr. Andrei Mariandyshev "
+            des="TB expert & HOD, at Northern State Medical University, Leading tuberculosis expert driving key TB programs globally."
             img="/images/img/Andrei.png"
           />
         </div>
       </SectionWrapper>
 
       {/* Promise & Invitation */}
-      <section
-        className="bg-green-50 px-6 py-16 text-center text-gray-800"
-        aria-labelledby="promise-title"
-      >
-        <h2
-          id="promise-title"
-          className="text-3xl font-bold text-green-800 mb-6"
-        >
-          Our Promise to You
-        </h2>
-        <p className="max-w-3xl mx-auto leading-relaxed mb-10">
+      <SectionWrapper>
+        <SectionHeading
+          heading={{ primary: "Our Promise", secondary: "to You" }}
+        />
+        <div className="promise-content text-justify md:text-center mb-8">
           At Keon Pharm, we don’t just make medicines—we craft trust, wellness,
           and hope. Our commitment to excellence, ethics, and innovation sets us
           apart. Choosing Keon Pharm means joining a community driven by purpose
           and compassion.
-        </p>
-        <a
-          href="#contact"
-          className="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-md shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600"
-        >
-          Join Our Journey
-        </a>
-      </section>
-
-      {/* Unique Website Highlights */}
-      <section
-        className="max-w-6xl mx-auto py-16 px-6"
-        aria-labelledby="highlights-title"
-      >
-        <h2
-          id="highlights-title"
-          className="text-3xl font-bold text-green-900 mb-10 text-center"
-        >
-          Unique Website Highlights
-        </h2>
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 text-gray-700 leading-relaxed">
-          {[
-            {
-              title: "Virtual Herbarium",
-              desc: "Explore our interactive digital library of medicinal plants and their benefits.",
-            },
-            {
-              title: "Live Research Updates",
-              desc: "Track our clinical trials and product development in real time.",
-            },
-            {
-              title: "Wellness Blog",
-              desc: "Expert articles, tips, and stories from Ayurveda and modern medicine.",
-            },
-            {
-              title: "Patient Success Stories",
-              desc: "Real-life testimonials of our product impact.",
-            },
-            {
-              title: "Eco-Impact Dashboard",
-              desc: "Live data on our green initiatives and sustainability.",
-            },
-            {
-              title: "Collaborate With Us",
-              desc: "Portal for researchers and partners to join projects.",
-            },
-            {
-              title: "Global Community Map",
-              desc: "Visualize our worldwide reach and partnerships.",
-            },
-          ].map(({ title, desc }, i) => (
-            <article
-              key={i}
-              className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
-              tabIndex={0}
-              aria-label={title}
-            >
-              <h3 className="text-xl font-semibold mb-2 text-green-700">
-                {title}
-              </h3>
-              <p>{desc}</p>
-            </article>
-          ))}
         </div>
-      </section>
+        <div className="flex justify-center items-center">
+          <a
+            href="#contact"
+            className="inline-block  bg-teal text-white font-semibold py-3 px-8 rounded-full shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600"
+          >
+            Join Our Journey
+          </a>
+        </div>
+      </SectionWrapper>
+
       {/* Why Choose Us */}
       <section
         className="bg-green-50 px-6 py-16"
@@ -336,7 +276,7 @@ Ex-President of Mycology Society of India"
       {/* Contact Section */}
       <section
         id="contact"
-        className="bg-green-700 text-white py-16 px-6"
+        className="bg-teal rounded-xl text-white py-16 px-6"
         aria-labelledby="contact-title"
       >
         <h2 id="contact-title" className="text-3xl font-bold mb-6 text-center">
@@ -350,24 +290,24 @@ Ex-President of Mycology Society of India"
             alert("Form submission simulated. Implement backend accordingly.");
           }}
         >
-          <label className="flex flex-col text-gray-100">
+          <label className="flex flex-col text-teal">
             Name
             <input
               type="text"
               name="name"
               required
-              className="mt-2 p-3 rounded-md text-white-800 bg-green-800"
+              className="mt-2 p-3 rounded-md text-white-800 bg-yellow"
               placeholder="Your full name"
               aria-required="true"
             />
           </label>
-          <label className="flex flex-col text-gray-100">
+          <label className="flex flex-col text-teal">
             Email
             <input
               type="email"
               name="email"
               required
-              className="mt-2 p-3 rounded-md text-white-800 bg-green-800"
+              className="mt-2 p-3 rounded-md text-white-800 bg-yellow"
               placeholder="you@example.com"
               aria-required="true"
             />
@@ -378,14 +318,14 @@ Ex-President of Mycology Society of India"
               name="message"
               required
               rows={5}
-              className="mt-2 p-3 rounded-md text-white-800 resize-none bg-green-800"
+              className="mt-2 p-3 rounded-md text-teal resize-none bg-yellow"
               placeholder="Your message here..."
               aria-required="true"
             />
           </label>
           <button
             type="submit"
-            className="md:col-span-2 bg-green-900 hover:bg-green-800 transition-colors py-3 rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-300"
+            className="md:col-span-2 bg-yellow text-teal hover:bg-green-800 transition-colors py-3 rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-300"
           >
             Send Message
           </button>
@@ -393,7 +333,7 @@ Ex-President of Mycology Society of India"
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-8 px-6 text-center text-sm">
+      <footer className="bg-teal rounded-xl text-white py-8 px-6 text-center text-sm">
         <p>
           &copy; {new Date().getFullYear()} Keon Pharm Private Limited — All
           Rights Reserved
