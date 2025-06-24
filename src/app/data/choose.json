@@ -1,0 +1,34 @@
+{
+  "choose": [
+    {
+      "id": 1,
+      "icon": "TbHistory",
+      "heading": "Decades of Expertise in Ayurveda and Pharma"
+    },
+    {
+      "id": 2,
+      "icon": "TbCertificate",
+      "heading": "Unmatched Quality & Safety Standards"
+    },
+    {
+      "id": 3,
+      "icon": "TbFlask",
+      "heading": "Innovative Research and Development"
+    },
+    {
+      "id": 4,
+      "icon": "TbHeartHandshake",
+      "heading": "Strong Ethical and Social Responsibility"
+    },
+    {
+      "id": 5,
+      "icon": "TbLeaf",
+      "heading": "Committed to Sustainability and Environment"
+    },
+    {
+      "id": 6,
+      "icon": "TbUsers",
+      "heading": "Passionate Team Dedicated to Your Health"
+    }
+  ]
+}
