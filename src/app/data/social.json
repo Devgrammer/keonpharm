@@ -1,0 +1,40 @@
+{
+  "socialLinks": [
+    {
+      "platform": "Facebook",
+      "url": "#facebook",
+      "icon": "FaFacebook",
+      "ariaLabel": "Visit our Facebook page"
+    },
+    {
+      "platform": "Twitter",
+      "url": "#twitter",
+      "icon": "FaTwitter",
+      "ariaLabel": "Follow us on Twitter"
+    },
+    {
+      "platform": "Instagram",
+      "url": "#instagram",
+      "icon": "FaInstagram",
+      "ariaLabel": "Follow us on Instagram"
+    },
+    {
+      "platform": "LinkedIn",
+      "url": "#linkedin",
+      "icon": "FaLinkedin",
+      "ariaLabel": "Connect on LinkedIn"
+    },
+    {
+      "platform": "YouTube",
+      "url": "#youtube",
+      "icon": "FaYoutube",
+      "ariaLabel": "Watch on YouTube"
+    },
+    {
+      "platform": "WhatsApp",
+      "url": "#whatsapp",
+      "icon": "FaWhatsapp",
+      "ariaLabel": "Chat via WhatsApp"
+    }
+  ]
+}

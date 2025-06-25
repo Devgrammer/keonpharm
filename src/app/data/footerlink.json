@@ -1,0 +1,32 @@
+{
+  "footerLinks": [
+    {
+      "section": "Quick Links",
+      "links": [
+        { "text": "Our Doctor", "url": "#our-doctor" },
+        { "text": "Our Services", "url": "#our-services" },
+        { "text": "FAQ", "url": "#faq" },
+        { "text": "Contact", "url": "#contact" },
+        { "text": "Pricing", "url": "#pricing" }
+      ]
+    },
+    {
+      "section": "Help",
+      "links": [
+        { "text": "Customer Support", "url": "#customer-support" },
+        { "text": "Delivery Details", "url": "#delivery-details" },
+        { "text": "Terms & Conditions", "url": "#terms" },
+        { "text": "Privacy Policy", "url": "#privacy" }
+      ]
+    },
+    {
+      "section": "Contact",
+      "links": [
+        { "text": "Submit Request", "url": "#submit-request" },
+        { "text": "Get In Touch", "url": "#get-in-touch" },
+        { "text": "Chat With Us", "url": "#chat" },
+        { "text": "Call Us", "url": "#call-us" }
+      ]
+    }
+  ]
+}
