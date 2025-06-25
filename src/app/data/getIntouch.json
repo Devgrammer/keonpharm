@@ -1,0 +1,19 @@
+{
+  "getInTouch": [
+    {
+      "id": 1,
+      "heading": "Our Contact",
+      "content": "Reach out to KeonPharm for all your pharmaceutical needs. We're here to support your health journey."
+    },
+    {
+      "id": 2,
+      "heading": "Chat With Us",
+      "content": "Our customer support team is available via live chat for instant assistance with your inquiries."
+    },
+    {
+      "id": 3,
+      "heading": "Call Us",
+      "content": "Speak directly with our representatives during business hours for personalized support and information."
+    }
+  ]
+}
