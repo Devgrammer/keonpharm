@@ -15,6 +15,8 @@ import FocusCard from "./components/focusCard/FocusCard";
 import { useState } from "react";
 import ExpertCard from "./components/expertCard/ExpertCard";
 import ChooseCard from "./components/chooseCard/ChooseCard";
+import Footer from "./components/footer/Footer";
+import GetInTouch from "./components/getInTouch/GetInTouch";
 
 interface FocusState {
   ayu: boolean;
@@ -267,80 +269,16 @@ Ex-President of Mycology Society of India"
       </SectionWrapper>
 
       {/* Contact Section */}
-      <section
-        id="contact"
-        className="bg-teal rounded-xl text-white py-16 px-6"
-        aria-labelledby="contact-title"
-      >
-        <h2 id="contact-title" className="text-3xl font-bold mb-6 text-center">
-          Get In Touch
-        </h2>
-        <form
-          className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"
-          aria-label="Contact form"
-          onSubmit={(e) => {
-            e.preventDefault();
-            alert("Form submission simulated. Implement backend accordingly.");
-          }}
-        >
-          <label className="flex flex-col text-teal">
-            Name
-            <input
-              type="text"
-              name="name"
-              required
-              className="mt-2 p-3 rounded-md text-white-800 bg-yellow"
-              placeholder="Your full name"
-              aria-required="true"
-            />
-          </label>
-          <label className="flex flex-col text-teal">
-            Email
-            <input
-              type="email"
-              name="email"
-              required
-              className="mt-2 p-3 rounded-md text-white-800 bg-yellow"
-              placeholder="you@example.com"
-              aria-required="true"
-            />
-          </label>
-          <label className="flex flex-col text-gray-100 md:col-span-2">
-            Message
-            <textarea
-              name="message"
-              required
-              rows={5}
-              className="mt-2 p-3 rounded-md text-teal resize-none bg-yellow"
-              placeholder="Your message here..."
-              aria-required="true"
-            />
-          </label>
-          <button
-            type="submit"
-            className="md:col-span-2 bg-yellow text-teal hover:bg-green-800 transition-colors py-3 rounded-md font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-300"
-          >
-            Send Message
-          </button>
-        </form>
-      </section>
+      <SectionWrapper>
+        <SectionHeading
+          heading={{ primary: "Get In", secondary: "Touch" }}
+          align="center"
+        />
+        <GetInTouch />
+      </SectionWrapper>
 
       {/* Footer */}
-      <footer className="bg-teal rounded-xl text-white py-8 px-6 text-center text-sm">
-        <p>
-          &copy; {new Date().getFullYear()} Keon Pharm Private Limited — All
-          Rights Reserved
-        </p>
-        <p>
-          Designed and Developed by Abhinav Rastogi |{" "}
-          <a
-            href="mailto:keonpharm@gmail.com"
-            className="underline hover:text-white"
-          >
-            keonpharm@gmail.com
-          </a>
-        </p>
-      </footer>
+      <Footer />
     </main>
   );
 }
