@@ -10,6 +10,7 @@ import {
   FaYoutube,
 } from "react-icons/fa6";
 import { PiEnvelopeSimpleThin } from "react-icons/pi";
+import Image from "next/image";
 
 const Footer = () => {
   const IconRenderer = (ch: string) => {
@@ -35,16 +36,44 @@ const Footer = () => {
       <div className="footer-main-content-container md:flex justify-between space-y-8">
         <div className="footer-left-content-container space-y-8  md:space-y-16">
           <div className="brand-container text-left ">
-            <div className="brand-logo font-bold text-4xl text-yellow mb-4">
-              KEON PHARM
+            <div className="brand-logo leading-tight text-yellow mb-4">
+              <div>
+                <Image
+                  src={"/images/img/brand_big.png"}
+                  width={200}
+                  height={100}
+                  alt="brand"
+                />
+              </div>
+              <div className="slogan text-yellow font-semibold mb-4">
+                Inventing Wellness, Inspiring World.
+              </div>
+              <div className="brand-address">
+                <address className="not-italic w-full md:w-sm leading-normal text-white">
+                  <p>
+                    SA5/129-B, Ramrepur Pahariya, Pahariya Mandi, Varanasi,
+                    Uttar Pradesh, India, 221007
+                  </p>
+                  <p>
+                    Email:{" "}
+                    <a
+                      href="mailto:keonpharm@gmail.com"
+                      className="text-yellow underline"
+                    >
+                      keonpharm@gmail.com
+                    </a>{" "}
+                    | Tel:{" "}
+                    <a
+                      href="tel:+917275345430"
+                      className="text-yellow underline"
+                    >
+                      +91 7275345430
+                    </a>
+                  </p>
+                </address>
+              </div>
             </div>
-            <h2 className=" text-xl md:text-2xl font-bold mb-2 md:mb-4">
-              About KeonPharm
-            </h2>
-            <p className="text-md md:text-lg max-w-full md:max-w-sm leading-tight">
-              World-Class Pharma Research & Development from the Heart of
-              Varanasi
-            </p>
+           
           </div>
           <div className="brand-social-container flex gap-x-4">
             {SocialLinks.socialLinks.map((link, index) => {
