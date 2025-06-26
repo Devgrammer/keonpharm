@@ -17,6 +17,9 @@ import ExpertCard from "./components/expertCard/ExpertCard";
 import ChooseCard from "./components/chooseCard/ChooseCard";
 import Footer from "./components/footer/Footer";
 import GetInTouch from "./components/getInTouch/GetInTouch";
+import Link from "next/link";
+import { IoClose } from "react-icons/io5";
+
 
 interface FocusState {
   ayu: boolean;
@@ -24,16 +27,61 @@ interface FocusState {
   nat: boolean;
 }
 
+
 export default function Home() {
   const [isFocused, setIsFocused] = useState<FocusState>({
     ayu: true,
     mod: false,
     nat: false,
   });
+
+  const handleNavClose=()=>{
+    setIsNavToggle(false)
+  }
+
+
+  const [isNavToggle, setIsNavToggle]= useState<boolean>(false);
   return (
-    <main className="font-sans text-gray-800 bg-white p-4 space-y-2">
+    <main className={`font-sans text-gray-800 bg-white p-4 space-y-2`}>
+      {/* Mobile Navbar Section */}
+      <div
+        className={` fixed top-0 left-0 transform transition-all duration-800 ease-in-out nav-bar-modal w-screen  h-screen  bg-teal z-55 text-white  ${
+          isNavToggle ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <button
+          onClick={() => setIsNavToggle(false)}
+          className="absolute top-4 right-4"
+        >
+          <IoClose />
+        </button>
+        <ul className="font-semibold text-center flex-col space-y-16 p-16">
+          <li>
+            <Link href="/"  onClick={handleNavClose}>Home</Link>
+          </li>
+          <li>
+            <Link href="#we_are"  onClick={handleNavClose}>About</Link>
+          </li>
+          <li>
+            <Link href="#vision"  onClick={handleNavClose}>Our Vision</Link>
+          </li>
+          <li>
+            <Link href="#experts"  onClick={handleNavClose}>Our Experts</Link>
+          </li>
+          <li>
+            <Link href="#focus"  onClick={handleNavClose}>Expertise</Link>
+          </li>
+          <li>
+            <Link href="#choose"  onClick={handleNavClose}>Advantage</Link>
+          </li>
+          <li>
+            <Link href="#contact"  onClick={handleNavClose}>Contact us</Link>
+          </li>
+        </ul>
+      </div>
+
       {/* Navbar Section */}
-      <Navbar />
+      <Navbar setIsNavToggle={setIsNavToggle} />
 
       {/* Hero Section */}
       <HeroSection />
@@ -62,7 +110,7 @@ export default function Home() {
       </section> */}
 
       {/* Who We Are */}
-      <SectionWrapper>
+      <SectionWrapper id="we_are" subHead="">
         <SectionHeading
           heading={{ primary: "Who We", secondary: "Are?" }}
           align="center"
@@ -79,7 +127,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Vision*/}
-      <SectionWrapper>
+      <SectionWrapper id="vision" subHead="">
         <SectionHeading
           heading={{ primary: "Our", secondary: "Vision" }}
           align="center"
@@ -93,7 +141,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Mission */}
-      <SectionWrapper>
+      <SectionWrapper id="mission" subHead="">
         <div className=" mx-auto">
           <div>
             <SectionHeading
@@ -135,7 +183,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* What Makes Keon Pharm Unique */}
-      <SectionWrapper>
+      <SectionWrapper id="unique" subHead="">
         <SectionHeading
           heading={{ primary: "What Makes Keon Pharm", secondary: "Unique?" }}
           align="center"
@@ -157,7 +205,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Main Areas of Focus */}
-      <SectionWrapper>
+      <SectionWrapper id="focus" subHead="">
         <SectionHeading
           heading={{ primary: "Our Main Area of", secondary: "Focus?" }}
           align="center"
@@ -197,7 +245,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Our Expert */}
-      <SectionWrapper>
+      <SectionWrapper id="experts" subHead="">
         <SectionHeading
           heading={{ primary: "Our", secondary: "Experts" }}
           align="center"
@@ -223,7 +271,7 @@ Ex-President of Mycology Society of India"
       </SectionWrapper>
 
       {/* Promise & Invitation */}
-      <SectionWrapper>
+      <SectionWrapper id="promise" subHead="">
         <SectionHeading
           heading={{ primary: "Our Promise", secondary: "to You" }}
           align="center"
@@ -246,7 +294,7 @@ Ex-President of Mycology Society of India"
 
       {/* Why Choose Us */}
 
-      <SectionWrapper>
+      <SectionWrapper id="choose" subHead="">
         <div className=" md:flex mx-auto">
           <SectionHeading
             heading={{ primary: "Why Choose", secondary: "Keon Pharm?" }}
@@ -269,7 +317,7 @@ Ex-President of Mycology Society of India"
       </SectionWrapper>
 
       {/* Contact Section */}
-      <SectionWrapper>
+      <SectionWrapper id="contact" subHead="">
         <SectionHeading
           heading={{ primary: "Get In", secondary: "Touch" }}
           align="center"
