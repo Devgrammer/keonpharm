@@ -20,13 +20,11 @@ import GetInTouch from "./components/getInTouch/GetInTouch";
 import Link from "next/link";
 import { IoClose } from "react-icons/io5";
 
-
 interface FocusState {
   ayu: boolean;
   mod: boolean;
   nat: boolean;
 }
-
 
 export default function Home() {
   const [isFocused, setIsFocused] = useState<FocusState>({
@@ -35,12 +33,11 @@ export default function Home() {
     nat: false,
   });
 
-  const handleNavClose=()=>{
-    setIsNavToggle(false)
-  }
+  const handleNavClose = () => {
+    setIsNavToggle(false);
+  };
 
-
-  const [isNavToggle, setIsNavToggle]= useState<boolean>(false);
+  const [isNavToggle, setIsNavToggle] = useState<boolean>(false);
   return (
     <main className={`font-sans text-gray-800 bg-white p-4 space-y-2`}>
       {/* Mobile Navbar Section */}
@@ -57,57 +54,47 @@ export default function Home() {
         </button>
         <ul className="font-semibold text-center flex-col space-y-16 p-16">
           <li>
-            <Link href="/"  onClick={handleNavClose}>Home</Link>
+            <Link href="/" onClick={handleNavClose}>
+              Home
+            </Link>
           </li>
           <li>
-            <Link href="#we_are"  onClick={handleNavClose}>About</Link>
+            <Link href="#we_are" onClick={handleNavClose}>
+              About
+            </Link>
           </li>
           <li>
-            <Link href="#vision"  onClick={handleNavClose}>Our Vision</Link>
+            <Link href="#vision" onClick={handleNavClose}>
+              Our Vision
+            </Link>
           </li>
           <li>
-            <Link href="#experts"  onClick={handleNavClose}>Our Experts</Link>
+            <Link href="#experts" onClick={handleNavClose}>
+              Our Experts
+            </Link>
           </li>
           <li>
-            <Link href="#focus"  onClick={handleNavClose}>Expertise</Link>
+            <Link href="#focus" onClick={handleNavClose}>
+              Expertise
+            </Link>
           </li>
           <li>
-            <Link href="#choose"  onClick={handleNavClose}>Advantage</Link>
+            <Link href="#choose" onClick={handleNavClose}>
+              Advantage
+            </Link>
           </li>
           <li>
-            <Link href="#contact"  onClick={handleNavClose}>Contact us</Link>
+            <Link href="#contact" onClick={handleNavClose}>
+              Contact us
+            </Link>
           </li>
         </ul>
       </div>
 
       {/* Navbar Section */}
       <Navbar setIsNavToggle={setIsNavToggle} />
-
       {/* Hero Section */}
       <HeroSection />
-
-      {/* Contact info bar */}
-      {/* <section className="bg-gray-100 py-4 text-center text-sm md:text-base text-gray-700">
-        <address className="not-italic">
-          <p>
-            SA5/129-B, Ramrepur Pahariya, Pahariya Mandi, Varanasi, Uttar
-            Pradesh, India, 221007
-          </p>
-          <p>
-            Email:{" "}
-            <a
-              href="mailto:keonpharm@gmail.com"
-              className="text-green-700 underline"
-            >
-              keonpharm@gmail.com
-            </a>{" "}
-            | Tel:{" "}
-            <a href="tel:+917275345430" className="text-green-700 underline">
-              +91 7275345430
-            </a>
-          </p>
-        </address>
-      </section> */}
 
       {/* Who We Are */}
       <SectionWrapper id="we_are" subHead="">
