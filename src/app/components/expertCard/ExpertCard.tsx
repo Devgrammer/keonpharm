@@ -16,7 +16,13 @@ const ExpertCard = ({ heading, des, img }: ExpertProps) => {
       >
         <div className="font-bold text-2xl mb-4 text-center ">{heading}</div>
         <div className="text-sm  text-center align-text-top">{des}</div>
-        <Image src={img} width={900} height={100} alt="alt" />
+        <Image
+          src={img}
+          width={900}
+          height={100}
+          alt="alt"
+          style={{  height: "auto" }}
+        />
       </div>
     </div>
   );

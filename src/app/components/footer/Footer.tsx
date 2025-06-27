@@ -37,12 +37,14 @@ const Footer = () => {
         <div className="footer-left-content-container space-y-8  md:space-y-16">
           <div className="brand-container text-left ">
             <div className="brand-logo leading-tight text-yellow mb-4">
-              <div>
+              <div className="">
                 <Image
                   src={"/images/img/brand_big.png"}
-                  width={200}
+                  width={100}
                   height={100}
                   alt="brand"
+                  sizes="100vw"
+                  style={{ width: "200px", height: "100%" }}
                 />
               </div>
               <div className="slogan text-yellow font-semibold mb-4">
@@ -73,7 +75,6 @@ const Footer = () => {
                 </address>
               </div>
             </div>
-           
           </div>
           <div className="brand-social-container flex gap-x-4">
             {SocialLinks.socialLinks.map((link, index) => {

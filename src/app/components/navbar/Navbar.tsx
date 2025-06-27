@@ -13,14 +13,14 @@ const Navbar = ({ setIsNavToggle }: NavProp) => {
       aria-label="Hero Section"
     >
       <div className="">
-        <div className="font-bold text-xl text-yellow">
+        <div className="font-bold text-xl flex items-center text-yellow  w-[50%] md:w-[80%] aspect-[1/1] h-fit">
           <Link href="/">
             <Image
               src={"/images/img/brand.png"}
               width={100}
               height={100}
               alt="brand"
-              className=" w-[50%] md:w-[80%]"
+              className="object-contain"
             />
           </Link>
         </div>
