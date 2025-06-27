@@ -42,13 +42,13 @@ const HeroSection = () => {
           Contact us
         </a>
       </div>
-      <Image
-        className="absolute bottom-0 md:top-2.5  lg:right-[35.3%] z-10"
-        src={doctor}
-        alt=""
-        width={550}
-        height={100}
-      />
+      <div className="absolute flex  bottom-0  md:top-2.5 z-10 lg:right-[35.3%]  ">
+        <Image
+          src={doctor}
+          alt="doctor"
+          width={550}
+        />
+      </div>
     </section>
   );
 };
