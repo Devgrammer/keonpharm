@@ -71,6 +71,13 @@ const Footer = () => {
                     >
                       +91 7275345430
                     </a>
+                    ,{" "}
+                    <a
+                      href="tel:+919336229759"
+                      className="text-yellow underline"
+                    >
+                      +91 9336229759
+                    </a>
                   </p>
                 </address>
               </div>

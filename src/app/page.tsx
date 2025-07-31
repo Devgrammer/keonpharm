@@ -21,6 +21,8 @@ import Link from "next/link";
 import { IoClose } from "react-icons/io5";
 import { ReactLenis } from "lenis/react";
 import "lenis/dist/lenis.css";
+import { TbBrandWhatsappFilled } from "react-icons/tb";
+
 
 interface FocusState {
   ayu: boolean;
@@ -52,6 +54,7 @@ export default function Home() {
   };
 
   const [isNavToggle, setIsNavToggle] = useState<boolean>(false);
+  const [isChatToggle, setIsChatToggle] = useState<boolean>(true);
 
   const options: LenisOptions = {
     lerp: 0.05,
@@ -59,7 +62,7 @@ export default function Home() {
     smoothTouch: false,
     wheelMultiplier: 0.8,
     touchMultiplier: 1.5,
-    syncTouch: true,
+    syncTouch: false,
     duration: 1.2,
     easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     infinite: false,
@@ -348,6 +351,24 @@ Ex-President of Mycology Society of India"
             />
             <GetInTouch />
           </SectionWrapper>
+          {isChatToggle && (
+            <div
+              
+              className="whatsapp-redirect fixed  bottom-6 right-6 md:bottom-10 md:right-10 z-1000"
+            >
+              <span className="absolute -right-2 -top-2">
+                <IoClose
+                  size={24}
+                  color={"black"}
+                  onClick={() => setIsChatToggle(!isChatToggle)}
+                />
+              </span>
+              <a href="https://wa.me/+917275345430"
+              target="_blank">
+                <TbBrandWhatsappFilled size={64} color={"#1B5A4F"} />
+              </a>
+            </div>
+          )}
 
           {/* Footer */}
           <Footer />
