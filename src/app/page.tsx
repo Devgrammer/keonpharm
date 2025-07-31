@@ -77,11 +77,15 @@ export default function Home() {
           >
             <button
               onClick={() => setIsNavToggle(false)}
-              className="absolute top-4 right-4"
+              className="absolute top-6 right-6 "
             >
-              <IoClose />
+              <IoClose size={28} />
             </button>
-            <ul className="font-semibold text-center flex-col space-y-16 p-16">
+            <ul
+              className={`font-semibold text-center flex-col space-y-16 p-16 ${
+                isNavToggle ? "flex-col" : "hidden"
+              }`}
+            >
               <li>
                 <Link href="/" onClick={handleNavClose}>
                   Home

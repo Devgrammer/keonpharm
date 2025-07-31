@@ -1,53 +1,20 @@
-import Image from "next/image";
+
 import React from "react";
-import { PiDna, PiTree } from "react-icons/pi";
-import doctor from "../../../../public/images/img/doctor.png";
+
 
 const HeroSection = () => {
   return (
     <section
-      className="relative bg-teal min-h-[35rem] rounded-xl text-white py-8 md:py-2 px-4 md:px-16 text-center"
+      className="bg-wrapper relative bg-teal rounded-xl transition-all duration-300 ease-in-out "
       aria-label="Hero Section"
     >
-      {" "}
-      <h1 className="text-[2.5rem] md:text-[5rem]  text-yellow lg:text-[11rem] font-extrabold md:font-bold max-w-10xl leading-tight">
-        KEON &nbsp; PHARM
-      </h1>
-      <p className="md:hidden text-xs text-teal-200">
-        Where ancient wisdom meets modern science
-      </p>
-      <div className="hidden md:flex max-w-8xl justify-between items-center gap-x-2  lg:px-4 ">
-        <p className="flex  justify-start items-center  md:gap-x-4 text-xs text-purple-200  font-light md:text-xl md:max-w-3xl ">
-          <span className="flex justify-center items-center w-8 h-8 font-semibold  rounded-full bg-purple-200 text-black">
-            <PiTree />
-          </span>{" "}
-          Where ancient wisdom
-        </p>
-        <p className=" flex items-center  md:gap-x-4 text-xs text-teal-200 font-light md:text-xl md:max-w-3xl  ">
-          <span className=" flex justify-center items-center w-8 h-8 font-semibold  rounded-full bg-teal-200 text-black">
-            <PiDna />
-          </span>{" "}
-          Meets modern science
-        </p>
-      </div>
-      <div className=" translate-y-6 md:translate-y-50 md:flex justify-between items-start max-w-8xl mx-auto">
-        <p className=" w-full text-sm font-medium  md:text-sm md:max-w-[15rem] md:text-justify">
-          World-Class Pharma Research & Development from the Heart of Varanasi
-        </p>
-
+      <div className="bg-[url('/images/img/Keon_Pharma_heroM.png')] min-[480px]:bg-[url('/images/img/Keon_Pharma_hero.png')] h-[20rem] min-[380px]:h-[30rem] min-[480px]:h-[13rem] sm:h-[15rem] md:h-[20rem] lg:h-[25rem] xl:h-[35rem] bg-bottom bg-contain bg-no-repeat rounded-xl text-white py-8 md:py-2 px-4 md:px-16 text-center  transition-all duration-300 ease-in-out  max-w-[1920px] mx-auto">
         <a
           href="#contact"
-          className=" inline-block justify-end bg-yellow mt-4 md:mt-0 text-teal font-semibold px-4 py-1 md:py-2 md:px-6 rounded-2xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"
+          className="translate-y-15 min-[320px]:translate-y-28 min-[480px]:translate-y-30 sm:translate-y-37 md:translate-y-65 lg:translate-y-80 xl:translate-y-120 min-[480px]:translate-x-45 sm:translate-x-55 md:translate-x-75 lg:translate-x-95 xl:translate-x-138 2xl:translate-x-140 text-[14px] sm:text-xs lg:text-regular inline-block justify-end bg-yellow mt-4  md:mt-0 text-teal font-semibold px-2 md:py-1  md:px-6 rounded-2xl shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-300 ease-in-out"
         >
           Contact us
         </a>
-      </div>
-      <div className="absolute flex  bottom-0  md:top-2.5 z-10 lg:right-[35.3%]  ">
-        <Image
-          src={doctor}
-          alt="doctor"
-          width={550}
-        />
       </div>
     </section>
   );

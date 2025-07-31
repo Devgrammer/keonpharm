@@ -25,7 +25,7 @@ const Navbar = ({ setIsNavToggle }: NavProp) => {
           </Link>
         </div>
       </div>
-      <div className="menu hidden md:block">
+      <div className="menu hidden lg:block">
         <ul className="font-semibold inline-flex gap-x-12">
           <li>
             <Link href="/">Home</Link>
@@ -51,12 +51,12 @@ const Navbar = ({ setIsNavToggle }: NavProp) => {
         </ul>
       </div>
       <button
-        className="block md:hidden text-3xl "
+        className="block lg:hidden text-3xl "
         onClick={() => setIsNavToggle(true)}
       >
         <GiHamburgerMenu />
       </button>
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <a
           href="#contact"
           className=" inline-block justify-end bg-white text-teal font-semibold py-2 px-6 rounded-full shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white"

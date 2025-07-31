@@ -33,7 +33,7 @@ const Footer = () => {
   };
   return (
     <footer className="bg-teal min-h-96 rounded-xl text-white py-8 text-center text-sm space-y-4 px-4 md:px-20">
-      <div className="footer-main-content-container md:flex justify-between space-y-8">
+      <div className="footer-main-content-container lg:flex justify-between space-y-8">
         <div className="footer-left-content-container space-y-8  md:space-y-16">
           <div className="brand-container text-left ">
             <div className="brand-logo leading-tight text-yellow mb-4">
